@@ -20,31 +20,33 @@ BATCH = []
 @Client.on_message(filters.command('start') & filters.incoming & filters.private)
 async def start(c, m, cb=False):
     if not cb:
-        send_msg = await m.reply_text("**Processing...**", quote=True)
+        send_msg = await m.reply_text("**Wait..**", quote=True)
 
     owner = await c.get_users(int(OWNER_ID))
     owner_username = owner.username if owner.username else 'Ns_bot_updates'
 
     # start text
-    text = f"""Hey! {m.from_user.mention(style='md')}
+    text = f"""வணக்கம் 🖐️ {m.from_user.mention(style='md')}
 
-💡 ** I am Telegram File Store Bot**
+ ** எப்படி இருக்கிறீர்கள் ??**
 
-`You can store your Telegram Media for permanent Link!`
+`நீங்கள் என்னை சீரியல்கள் பார்க்க பயன்படுத்தி கொள்ளலாம்`
 
-
-**👲 Maintained By:** {owner.mention(style='md')}
+**💝 This Bot Created By:** {owner.mention(style='md')}
 """
 
     # Buttons
     buttons = [
         [
-            InlineKeyboardButton('My Father 👨‍✈️', url=f"https://t.me/{owner_username}"),
-            InlineKeyboardButton('Help 💡', callback_data="help")
+            InlineKeyboardButton('Website 🌐', url=f"https://www.sktamilserialbots.com/"),
+            InlineKeyboardButton('Help ', callback_data="help")
         ],
         [
-            InlineKeyboardButton('About 📕', callback_data="about")
+            InlineKeyboardButton('Current Version And Info', callback_data="current version")
         ]
+        [
+            InlineKeyboardButton('🎬 Your Movies Channel 🎬', url=f"https://t.me/Sk_Tamil_Movies")
+        ],
     ]
 
     # when button home is pressed
