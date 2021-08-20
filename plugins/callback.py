@@ -16,27 +16,27 @@ async def help_cb(c, m):
     await m.answer()
 
     # help text
-    help_text = """**You need Help?? 🧐**
+    help_text = """** உங்களுக்கு உதவி தேவையா ??**
 
-★ Just send me the files i will store file and give you share able link
+நீங்கள் ஒன்றும் செய்யவேண்டாம் 
 
 
-**You can use me in channel too 😉**
+**எங்களுடைய சேனலில் கிடைக்கும் அப்டேட்ஸ் ஐ மட்டும் நீங்கள் பயன்படுத்தவும்**
 
-★ Make me admin in your channel with edit permission. Thats enough now continue uploading files in channel i will edit all posts and add share able link url buttons
+★ நீங்கள் தேவை இல்லாமல் என்னை பயன்படுத்தினால் உங்களுக்கு கடுமையான தண்டனை கிடைக்கும்
 
-**How to enable uploader details in caption**
+**நன்றி 🙏**
 
-★ Use /mode command to change and also you can use `/mode channel_id` to control caption for channel msg."""
+★ """
 
     # creating buttons
     buttons = [
         [
-            InlineKeyboardButton('Home 🏕', callback_data='home'),
-            InlineKeyboardButton('About 📕', callback_data='about')
+            InlineKeyboardButton('Back To Home', callback_data='back to home'),
+            InlineKeyboardButton('Current Version', callback_data='current version')
         ],
         [
-            InlineKeyboardButton('Close 🔐', callback_data='close')
+            InlineKeyboardButton('Close', callback_data='close')
         ]
     ]
 
@@ -53,38 +53,38 @@ async def close_cb(c, m):
     await m.message.reply_to_message.delete()
 
 
-@Client.on_callback_query(filters.regex('^about$'))
+@Client.on_callback_query(filters.regex('^current version$'))
 async def about_cb(c, m):
     await m.answer()
     owner = await c.get_users(int(OWNER_ID))
     bot = await c.get_me()
 
     # about text
-    about_text = f"""--**My Details:**--
+    about_text = f"""--**Current Version 🎗️**--
 
-🤖 𝐌𝐲 𝐍𝐚𝐦𝐞: {bot.mention(style='md')}
+Current Version : 1:0
     
-📝 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞: [Python 3](https://www.python.org/)
+Next Version : 1:1
 
-🧰 𝐅𝐫𝐚𝐦𝐞𝐰𝐨𝐫𝐤: [Pyrogram](https://github.com/pyrogram/pyrogram)
+Old Version : 0:0 
 
-👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫: {owner.mention(style='md')}
+What's New : New Ui(1:0)
 
-📢 𝐂𝐡𝐚𝐧𝐧𝐞𝐥: [NS BOT UPDATES](https://t.me/Ns_bot_updates)
+Main Channel: [Sk Tv](https://t.me/Sk_Tv_Official)
 
-👥 𝐆𝐫𝐨𝐮𝐩: [Ns BOT SUPPORT](https://t.me/Ns_Bot_supporters)
+Updates Channel: [Sk Tamil Serial Bots](https://t.me/Sk_Tamil_Serial_Bots)
 
-🌐𝐒𝐨𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞: [Press Me 🥰](https://github.com/Ns-Bots/TG-File-Store)
+Movies Channel : [Sk Tamil Movies](https://t.me/Sk_Tamil_Movies)
 """
 
     # creating buttons
     buttons = [
         [
-            InlineKeyboardButton('Home 🏕', callback_data='home'),
-            InlineKeyboardButton('Help 💡', callback_data='help')
+            InlineKeyboardButton('Home ', callback_data='home'),
+            InlineKeyboardButton('Help ', callback_data='help')
         ],
         [
-            InlineKeyboardButton('Close 🔐', callback_data='close')
+            InlineKeyboardButton('Close ', callback_data='close')
         ]
     ]
 
