@@ -13,18 +13,18 @@ async def forcesub(c, m):
         try:
             user = await c.get_chat_member(UPDATE_CHANNEL, m.from_user.id)
             if user.status == "kicked":
-               await m.reply_text("**Hey you are banned 😜**", quote=True)
+               await m.reply_text("**😡 நீங்கள் மிகவும் மோசமானவர் அதனால் இனி நீங்கள் என்னை பயன்படுத்த இயலாது 😡**", quote=True)
                return
         except UserNotParticipant:
-            buttons = [[InlineKeyboardButton(text='Updates Channel 🔖', url=f"https://t.me/{UPDATE_CHANNEL}")]]
+            buttons = [[InlineKeyboardButton(text='💖 First Join Sk Tv 💖', url=f"https://t.me/{UPDATE_CHANNEL}")]]
             if m.text:
                 if (len(m.text.split()) > 1) & ('start' in m.text):
                     decoded_data = await decode(m.text.split()[1])
                     chat_id, msg_id = decoded_data.split('_')
                     buttons.append([InlineKeyboardButton('🔄 Refresh', callback_data=f'refresh+{chat_id}+{msg_id}')])
             await m.reply_text(
-                f"Hey {m.from_user.mention(style='md')} you need join My updates channel in order to use me 😉\n\n"
-                "__Press the Following Button to join Now 👇__",
+                f"வணக்கம் 🖐️ {m.from_user.mention(style='md')} ⚡ நண்பா நீங்கள் என்னை பயன்படுத்த வேண்டும் என்று நினைத்தால்\n\n"
+                "__முதலில் @Sk_Tv_Official சேனலில் Join செய்யுங்கள் பிறகு /Start என்பதை கிளிக் செய்யுங்கள் ⚡__",
                 reply_markup=InlineKeyboardMarkup(buttons),
                 quote=True
             )
@@ -44,7 +44,7 @@ async def refresh_cb(c, m):
             user = await c.get_chat_member(UPDATE_CHANNEL, m.from_user.id)
             if user.status == "kicked":
                try:
-                   await m.message.edit("**Hey you are banned 😜**")
+                   await m.message.edit("**😡 நீங்கள் மிகவும் மோசமானவர் அதனால் இனி நீங்கள் என்னை பயன்படுத்த இயலாது 😡**")
                except:
                    pass
                return
@@ -53,7 +53,7 @@ async def refresh_cb(c, m):
             return
         except Exception as e:
             print(e)
-            await m.message.edit(f"Something Wrong. Please try again later or contact {owner.mention(style='md')}")
+            await m.message.edit(f"💝 ஏதோ தவறு நடந்து விட்டது கூடிய விரைவில் தவறு சரி செய்யப்படும் 💝")
             return
 
     cmd, chat_id, msg_id = m.data.split("+")
