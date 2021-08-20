@@ -44,8 +44,7 @@ async def start(c, m, cb=False):
         [
             InlineKeyboardButton('Current Version And Info', callback_data="current version")
         ]
-        [
-            InlineKeyboardButton('🎬 Your Movies Channel 🎬', url=f"https://t.me/Sk_Tamil_Movies")
+        [   InlineKeyboardButton('🎬 Your Movies Channel 🎬', url=f"https://t.me/Sk_Tamil_Movies")
         ],
     ]
 
