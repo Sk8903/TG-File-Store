@@ -53,7 +53,7 @@ async def close_cb(c, m):
     await m.message.reply_to_message.delete()
 
 
-@Client.on_callback_query(filters.regex('^current version$'))
+@Client.on_callback_query(filters.regex('^currentversion$'))
 async def about_cb(c, m):
     await m.answer()
     owner = await c.get_users(int(OWNER_ID))
