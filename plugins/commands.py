@@ -36,17 +36,14 @@ async def start(c, m, cb=False):
 """
 
     # Buttons
-    buttons = [
+    buttons = [[
+            InlineKeyboardButton('Website 🌐', url="https://www.sktamilserialbots.com/"),
+            InlineKeyboardButton('Help ', callback_data="help")],
         [
-            InlineKeyboardButton('Website 🌐', url=f"https://www.sktamilserialbots.com/"),
-            InlineKeyboardButton('Help ', callback_data="help")
+            InlineKeyboardButton('Current Version And Info', callback_data="currentversion")
         ],
-        [
-            InlineKeyboardButton('Current Version And Info', callback_data="current version")
-        ]
-        [   InlineKeyboardButton('🎬 Your Movies Channel 🎬', url=f"https://t.me/Sk_Tamil_Movies")
-        ],
-    ]
+        [   InlineKeyboardButton('🎬 Your Movies Channel 🎬', url="https://t.me/Sk_Tamil_Movies")
+        ]]
 
     # when button home is pressed
     if cb:
