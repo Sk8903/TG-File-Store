@@ -43,8 +43,7 @@ async def start(c, m, cb=False):
             InlineKeyboardButton('Current Version And Info', callback_data="currentversion")
         ],
         [   InlineKeyboardButton('🎬 Your Movies Channel 🎬', url="https://t.me/Sk_Tamil_Movies")
-        ]
-       ]
+        ]]
 
     # when button home is pressed
     if cb:
