@@ -103,7 +103,8 @@ async def storefile_channel(c, m):
     # making buttons
     buttons = [[
         InlineKeyboardButton(text="💖 SAVE THIS EPISODE 💖", url=url),
-        InlineKeyboardButton(text="⚡SHARE NOW⚡", url=share_url)
+        ],[
+        InlineKeyboardButton(text="⚡ SHARE NOW⚡ ", url=share_url)
     ]]
 
     # Editing and adding the buttons
