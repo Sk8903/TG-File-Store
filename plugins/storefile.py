@@ -102,9 +102,9 @@ async def storefile_channel(c, m):
 
     # making buttons
     buttons = [[
-        InlineKeyboardButton(text="💖 SAVE THIS EPISODE 💖", url={url}),
+        InlineKeyboardButton(text="💖 SAVE THIS EPISODE 💖", url=url),
         ],[
-        InlineKeyboardButton(text="⚡ SHARE NOW⚡", url=f"https://vivurl.com/st?api=f23e27e6360c1fda3c7dfc26bed733961a84252d&url=tg://share?url=https://t.me/{bot.username}?start={base64_string}"),
+        InlineKeyboardButton(text="👆 THIS LINK ONLY FOR PREMIUM MEMBERS 👆", url=f"https://t.me/Sk_Tv_Official"),
         ],[
         InlineKeyboardButton(text="🔥 JOIN NOW 🔥", url=f"https://t.me/Sk_Tv_Official"),
     ]]
